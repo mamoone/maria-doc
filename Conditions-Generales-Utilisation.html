@@ -1,103 +1,366 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Conditions Générales d’Utilisation — Maria</title>
+  <meta name="author" content="Maria" />
+  <meta name="description" content="Conditions Générales d’Utilisation du service numérique Maria." />
+  <style>
+    :root{
+      --bg:#f6f7fb;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --accent:#6b46c1; /* violet */
+      --accent-2:#4c51bf;
+      --text:#0f172a;
+      --max-width:900px;
+      --radius:12px;
+      --gap:1.125rem;
+      --shadow: 0 6px 20px rgba(15,23,42,0.08);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
 
-Conditions Générales d’Utilisation
+    html,body{
+      height:100%;
+      margin:0;
+      background:
+        radial-gradient(1000px 400px at 10% 10%, rgba(108,99,255,0.06), transparent 8%),
+        linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4));
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      font-size:16px;
+      padding:32px 20px;
+    }
 
-Dernière mise à jour : 25 décembre 2025
+    .wrap{
+      max-width:var(--max-width);
+      margin:0 auto;
+      display:grid;
+      grid-template-columns: 1fr 280px;
+      gap:28px;
+      align-items:start;
+    }
 
-Les présentes Conditions Générales d’Utilisation (ci-après les « CGU ») ont pour objet de définir les modalités et conditions d’accès et d’utilisation du service numérique exploité par Maria (ci-après le « Service »).
+    @media (max-width:900px){
+      .wrap{ grid-template-columns: 1fr; padding-bottom:24px; }
+    }
 
-L’accès au Service implique l’acceptation pleine, entière et sans réserve des présentes CGU.
+    header.card{
+      grid-column:1 / -1;
+      background:transparent;
+      padding:0;
+      margin:0 0 8px 0;
+    }
 
-1. Éditeur du service
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:28px;
+    }
 
-Le Service est édité et exploité par :
+    .hero{
+      display:flex;
+      gap:18px;
+      align-items:center;
+    }
 
-Maria
-Éditrice indépendante du service numérique
-Le Service est exploité à titre privé et professionnel.
+    .logo{
+      width:68px;
+      height:68px;
+      border-radius:12px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-weight:600;
+      font-size:20px;
+      box-shadow: 0 6px 18px rgba(79,70,229,0.15);
+    }
 
-2. Description du service
+    h1{
+      margin:0;
+      font-size:1.5rem;
+      letter-spacing:-0.02em;
+    }
+    .meta{
+      color:var(--muted);
+      font-size:0.95rem;
+      margin-top:6px;
+    }
 
-Le Service propose une plateforme numérique permettant aux utilisateurs d’accéder à des contenus, fonctionnalités et services en ligne, pouvant inclure des fonctionnalités interactives, informatives ou transactionnelles.
+    nav.toc{
+      position:sticky;
+      top:28px;
+      align-self:start;
+    }
 
-Maria se réserve le droit de faire évoluer, modifier, suspendre ou supprimer tout ou partie du Service, sans préavis, afin d’en améliorer le fonctionnement ou pour des raisons techniques, légales ou de sécurité.
+    .toc-list{
+      list-style:none;
+      padding:12px;
+      margin:0;
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+    .toc-list a{
+      text-decoration:none;
+      color:var(--accent-2);
+      padding:8px;
+      border-radius:8px;
+      display:block;
+      font-size:0.95rem;
+    }
+    .toc-list a:hover, .toc-list a:focus{
+      background:linear-gradient(90deg, rgba(76,81,191,0.06), rgba(107,70,193,0.04));
+      outline:none;
+    }
 
-3. Accès et utilisation du service
+    main.article{
+      padding:0;
+      background:transparent;
+    }
 
-Le Service est accessible aux personnes disposant de la capacité juridique nécessaire pour contracter.
+    section{
+      margin-bottom:22px;
+      padding:18px;
+      border-radius:10px;
+      background:linear-gradient(180deg, rgba(250,250,255,0.8), rgba(255,255,255,0.6));
+      border:1px solid rgba(15,23,42,0.03);
+    }
 
-L’utilisateur s’engage à :
+    h2{
+      margin:0 0 8px 0;
+      font-size:1.1rem;
+      color:var(--text);
+    }
 
-utiliser le Service de manière loyale et conforme aux lois en vigueur,
+    p, li{
+      color: #0b1220;
+      margin: 0 0 10px 0;
+      font-size:0.99rem;
+    }
 
-fournir des informations exactes lorsqu’elles sont requises,
+    ul{
+      margin:0 0 10px 20px;
+    }
 
-ne pas détourner le Service de son usage normal.
+    .intro{
+      margin-bottom:14px;
+      color:var(--muted);
+      font-size:0.98rem;
+    }
 
-Tout usage abusif, frauduleux ou portant atteinte au bon fonctionnement du Service pourra entraîner une suspension ou une exclusion définitive, sans indemnité.
+    .small{
+      font-size:0.88rem;
+      color:var(--muted);
+    }
 
-4. Responsabilité
+    footer.card{
+      grid-column:1 / -1;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      padding:14px 18px;
+    }
 
-Maria met tout en œuvre pour assurer un Service fiable et sécurisé. Toutefois, le Service est fourni en l’état, sans garantie expresse ou implicite.
+    a.brand{
+      color:var(--accent-2);
+      text-decoration:none;
+      font-weight:600;
+    }
 
-Maria ne saurait être tenue responsable :
+    /* Anchor highlight on target */
+    :target{
+      box-shadow: 0 0 0 4px rgba(107,70,193,0.08);
+      transform: translateY(-2px);
+    }
 
-des interruptions temporaires ou permanentes du Service,
+    /* Print rules */
+    @media print{
+      body{ background:white; padding:0; }
+      .wrap{ box-shadow:none; max-width:100%; }
+      nav.toc, .logo{ display:none; }
+      .card{ box-shadow:none; border:none; background:transparent; padding:0; }
+      section{ border:none; padding:0; background:transparent; }
+      footer.card{ display:none; }
+    }
 
-des pertes de données ou dommages indirects,
+    /* Back to top button */
+    .topbtn{
+      position:fixed;
+      right:20px;
+      bottom:20px;
+      background:var(--accent-2);
+      color:white;
+      border-radius:999px;
+      width:44px;
+      height:44px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 8px 20px rgba(76,81,191,0.16);
+      text-decoration:none;
+      transform:translateY(0);
+      transition:opacity .18s ease, transform .18s ease;
+      opacity:0;
+      pointer-events:none;
+    }
+    .topbtn.show{
+      opacity:1;
+      pointer-events:auto;
+      transform:translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap" role="document" aria-labelledby="cgu-title">
+    <header class="card hero" aria-hidden="false">
+      <div class="logo" aria-hidden="true">M</div>
+      <div>
+        <h1 id="cgu-title">Conditions Générales d’Utilisation</h1>
+        <div class="meta">Dernière mise à jour : 25 décembre 2025</div>
+        <div class="small" style="margin-top:8px;">L’accès au Service implique l’acceptation pleine, entière et sans réserve des présentes CGU.</div>
+      </div>
+    </header>
 
-des conséquences liées à une mauvaise utilisation du Service par l’utilisateur.
+    <main class="article card" id="contenu" tabindex="0">
+      <p class="intro">Les présentes Conditions Générales d’Utilisation (ci-après les « CGU ») ont pour objet de définir les modalités et conditions d’accès et d’utilisation du service numérique exploité par Maria.</p>
 
-L’utilisateur reconnaît utiliser le Service sous sa seule responsabilité.
+      <section id="editeur">
+        <h2>1. Éditeur du service</h2>
+        <p>Le Service est édité et exploité par :</p>
+        <p><strong>Maria</strong><br/>Éditrice indépendante du service numérique<br/>Le Service est exploité à titre privé et professionnel.</p>
+      </section>
 
-5. Propriété intellectuelle
+      <section id="description">
+        <h2>2. Description du service</h2>
+        <p>Le Service propose une plateforme numérique permettant aux utilisateurs d’accéder à des contenus, fonctionnalités et services en ligne, pouvant inclure des fonctionnalités interactives, informationnelles et des outils de gestion.</p>
+        <p>Maria se réserve le droit de faire évoluer, modifier, suspendre ou supprimer tout ou partie du Service, sans préavis, afin d’en améliorer le fonctionnement ou pour des raisons techniques, légales ou réglementaires.</p>
+      </section>
 
-L’ensemble des éléments composant le Service (textes, visuels, logos, interfaces, structure, code, bases de données) est protégé par le droit de la propriété intellectuelle et demeure la propriété exclusive de Maria.
+      <section id="acces-utilisation">
+        <h2>3. Accès et utilisation du service</h2>
+        <p>Le Service est accessible aux personnes disposant de la capacité juridique nécessaire pour contracter.</p>
+        <p>L’utilisateur s’engage à :</p>
+        <ul>
+          <li>utiliser le Service de manière loyale et conforme aux lois en vigueur,</li>
+          <li>fournir des informations exactes lorsqu’elles sont requises,</li>
+          <li>ne pas détourner le Service de son usage normal.</li>
+        </ul>
+        <p>Tout usage abusif, frauduleux ou portant atteinte au bon fonctionnement du Service pourra entraîner une suspension ou une exclusion définitive, sans indemnité.</p>
+      </section>
 
-Toute reproduction, représentation, modification ou exploitation non autorisée est strictement interdite et pourra donner lieu à des poursuites.
+      <section id="responsabilite">
+        <h2>4. Responsabilité</h2>
+        <p>Maria met tout en œuvre pour assurer un Service fiable et sécurisé. Toutefois, le Service est fourni en l’état, sans garantie expresse ou implicite.</p>
+        <p>Maria ne saurait être tenue responsable :</p>
+        <ul>
+          <li>des interruptions temporaires ou permanentes du Service,</li>
+          <li>des pertes de données ou dommages indirects,</li>
+          <li>des conséquences liées à une mauvaise utilisation du Service par l’utilisateur.</li>
+        </ul>
+        <p>L’utilisateur reconnaît utiliser le Service sous sa seule responsabilité.</p>
+      </section>
 
-6. Données personnelles
+      <section id="propriete-intellectuelle">
+        <h2>5. Propriété intellectuelle</h2>
+        <p>L’ensemble des éléments composant le Service (textes, visuels, logos, interfaces, structure, code, bases de données) est protégé par le droit de la propriété intellectuelle et demeure la propriété de Maria ou de ses ayants droit.</p>
+        <p>Toute reproduction, représentation, modification ou exploitation non autorisée est strictement interdite et pourra donner lieu à des poursuites.</p>
+      </section>
 
-Le Service peut collecter certaines données personnelles nécessaires à son fonctionnement.
+      <section id="donnees-personnelles">
+        <h2>6. Données personnelles</h2>
+        <p>Le Service peut collecter certaines données personnelles nécessaires à son fonctionnement.</p>
+        <p>Maria s’engage à traiter les données des utilisateurs de manière confidentielle et conforme aux principes de protection des données applicables, notamment :</p>
+        <ul>
+          <li>collecte limitée au strict nécessaire,</li>
+          <li>utilisation uniquement dans le cadre du Service,</li>
+          <li>absence de revente non autorisée des données.</li>
+        </ul>
+        <p>L’utilisateur dispose d’un droit d’accès, de rectification et de suppression de ses données.</p>
+      </section>
 
-Maria s’engage à traiter les données des utilisateurs de manière confidentielle et conforme aux principes de protection des données applicables, notamment :
+      <section id="obligations-utilisateur">
+        <h2>7. Obligations de l’utilisateur</h2>
+        <p>Il est strictement interdit d’utiliser le Service pour :</p>
+        <ul>
+          <li>toute activité illégale ou frauduleuse,</li>
+          <li>diffuser du contenu offensant, haineux, diffamatoire ou trompeur,</li>
+          <li>tenter d’accéder de manière non autorisée aux systèmes du Service.</li>
+        </ul>
+        <p>Tout manquement pourra entraîner des mesures immédiates, sans préavis.</p>
+      </section>
 
-collecte limitée au strict nécessaire,
+      <section id="suspension-resiliation">
+        <h2>8. Suspension et résiliation</h2>
+        <p>Maria se réserve le droit de suspendre ou résilier l’accès d’un utilisateur au Service, temporairement ou définitivement, en cas de violation des présentes CGU ou de comportement préjudiciable.</p>
+      </section>
 
-utilisation uniquement dans le cadre du Service,
+      <section id="modification-conditions">
+        <h2>9. Modification des conditions</h2>
+        <p>Les présentes CGU peuvent être modifiées à tout moment. Les nouvelles conditions entrent en vigueur dès leur publication sur le Service.</p>
+        <p>L’utilisateur est invité à consulter régulièrement cette page.</p>
+      </section>
 
-absence de revente non autorisée des données.
+      <section id="droit-applicable">
+        <h2>10. Droit applicable et juridiction compétente</h2>
+        <p>Les présentes CGU sont régies par le droit marocain.</p>
+        <p>Tout litige relatif à l’interprétation ou à l’exécution des présentes CGU relève de la compétence exclusive des tribunaux marocains.</p>
+      </section>
 
-L’utilisateur dispose d’un droit d’accès, de rectification et de suppression de ses données.
+      <section id="contact">
+        <h2>11. Contact</h2>
+        <p>Pour toute question relative au Service ou aux présentes Conditions Générales d’Utilisation, l’utilisateur peut contacter l’éditrice du Service par les moyens mis à disposition sur la plateforme.</p>
+      </section>
+    </main>
 
-7. Obligations de l’utilisateur
+    <nav class="toc card" aria-label="Table des matières">
+      <div style="font-weight:700; margin-bottom:10px; color:var(--text)">Sommaire</div>
+      <ul class="toc-list">
+        <li><a href="#editeur">1. Éditeur du service</a></li>
+        <li><a href="#description">2. Description du service</a></li>
+        <li><a href="#acces-utilisation">3. Accès et utilisation</a></li>
+        <li><a href="#responsabilite">4. Responsabilité</a></li>
+        <li><a href="#propriete-intellectuelle">5. Propriété intellectuelle</a></li>
+        <li><a href="#donnees-personnelles">6. Données personnelles</a></li>
+        <li><a href="#obligations-utilisateur">7. Obligations de l’utilisateur</a></li>
+        <li><a href="#suspension-resiliation">8. Suspension et résiliation</a></li>
+        <li><a href="#modification-conditions">9. Modification des conditions</a></li>
+        <li><a href="#droit-applicable">10. Droit applicable</a></li>
+        <li><a href="#contact">11. Contact</a></li>
+      </ul>
+      <div class="small" style="margin-top:12px;">Imprimer : pressez Ctrl+P (ou Cmd+P)</div>
+    </nav>
 
-Il est strictement interdit d’utiliser le Service pour :
+    <footer class="card">
+      <div class="small">© Maria — Éditrice du service numérique</div>
+      <div class="small">Dernière mise à jour : 25 décembre 2025</div>
+    </footer>
+  </div>
 
-toute activité illégale ou frauduleuse,
+  <a href="#contenu" class="topbtn" id="topbtn" aria-label="Haut de page" title="Haut de page">↑</a>
 
-diffuser du contenu offensant, haineux, diffamatoire ou trompeur,
-
-tenter d’accéder de manière non autorisée aux systèmes du Service.
-
-Tout manquement pourra entraîner des mesures immédiates, sans préavis.
-
-8. Suspension et résiliation
-
-Maria se réserve le droit de suspendre ou résilier l’accès d’un utilisateur au Service, temporairement ou définitivement, en cas de violation des présentes CGU ou de comportement préjudiciable au Service ou à ses utilisateurs.
-
-9. Modification des conditions
-
-Les présentes CGU peuvent être modifiées à tout moment.
-Les nouvelles conditions entrent en vigueur dès leur publication sur le Service.
-
-L’utilisateur est invité à consulter régulièrement cette page.
-
-10. Droit applicable et juridiction compétente
-
-Les présentes CGU sont régies par le droit marocain.
-
-Tout litige relatif à l’interprétation ou à l’exécution des présentes CGU relève de la compétence exclusive des tribunaux marocains.
-
-11. Contact
-
-Pour toute question relative au Service ou aux présentes Conditions Générales d’Utilisation, l’utilisateur peut contacter l’éditrice du Service par les moyens mis à disposition sur la plateforme.
+  <script>
+    // Smooth scrolling for older browsers and show/hide top button
+    (function(){
+      document.documentElement.style.scrollBehavior = 'smooth';
+      const topbtn = document.getElementById('topbtn');
+      window.addEventListener('scroll', function(){
+        if(window.scrollY > 240) topbtn.classList.add('show');
+        else topbtn.classList.remove('show');
+      });
+      topbtn.addEventListener('click', function(e){
+        e.preventDefault();
+        document.getElementById('contenu').focus();
+        window.scrollTo({top:0, behavior:'smooth'});
+      });
+    })();
+  </script>
+</body>
+</html>
